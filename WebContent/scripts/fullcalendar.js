@@ -48,6 +48,13 @@ var defaults = {
 
 	timezone: false,
 
+	location: 'location',
+	schTime: 'schTime',
+	sesnTo: 'sesnTo',
+	sesnFrm: 'sesnFrm',
+	startParam: 'start',
+	desc: 'desc',
+
 	//allDayDefault: undefined,
 	
 	// time formats
@@ -5180,8 +5187,9 @@ $.extend(DayGrid.prototype, {
 					''
 					) +
 			'>' +
-				'<div class="fc-content">' +
-					(isRTL ?
+				'<div class="fc-content" title="' + "Location: " + event.location  + ", Time: " + event.schTime 
+				+ ", Tutor: " + event.sesnTo + ", Student: " + event.sesnFrm + ", Description: " + event.desc + '">' + 
+				(isRTL ?
 						titleHtml + ' ' + timeHtml : // put a natural space in between
 						timeHtml + ' ' + titleHtml   //
 						) +
